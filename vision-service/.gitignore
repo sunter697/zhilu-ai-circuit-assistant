@@ -1,0 +1,7 @@
+build/
+models/*.onnx
+models/*.pt
+!models/best.onnx
+!models/legacy-week1.onnx
+__pycache__/
+*.py[cod]

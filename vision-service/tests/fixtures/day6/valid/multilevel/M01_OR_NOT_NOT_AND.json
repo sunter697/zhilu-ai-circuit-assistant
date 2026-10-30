@@ -1,0 +1,399 @@
+{
+  "schemaVersion": "vision-ir/0.1",
+  "source": {
+    "sha256": "f9cdd03a06d7c57627ea3aba427472c68b382b3cedc7c79804487679faa98162",
+    "width": 800,
+    "height": 520
+  },
+  "profile": {
+    "theme": "light",
+    "gateShape": "ansi",
+    "gridPixels": 10.0,
+    "scale": 1.0,
+    "offsetX": 0.0,
+    "offsetY": 0.0
+  },
+  "components": [
+    {
+      "id": "pin_in_001",
+      "kind": "INPUT_PIN",
+      "bodyBox": [
+        56,
+        66,
+        103,
+        94
+      ],
+      "anchor": [
+        100,
+        80
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "label": "A",
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "pin_in_002",
+      "kind": "INPUT_PIN",
+      "bodyBox": [
+        56,
+        256,
+        103,
+        284
+      ],
+      "anchor": [
+        100,
+        270
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "label": "B",
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "pin_in_003",
+      "kind": "INPUT_PIN",
+      "bodyBox": [
+        56,
+        446,
+        103,
+        474
+      ],
+      "anchor": [
+        100,
+        460
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "label": "C",
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "gate_001",
+      "kind": "OR",
+      "bodyBox": [
+        176,
+        331,
+        235,
+        389
+      ],
+      "anchor": [
+        230,
+        360
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "inputs": 2,
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "gate_002",
+      "kind": "NOT",
+      "bodyBox": [
+        327,
+        349,
+        363,
+        371
+      ],
+      "anchor": [
+        360,
+        360
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "inputs": 1,
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "gate_003",
+      "kind": "NOT",
+      "bodyBox": [
+        447,
+        349,
+        483,
+        371
+      ],
+      "anchor": [
+        480,
+        360
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "inputs": 1,
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "gate_004",
+      "kind": "AND",
+      "bodyBox": [
+        555,
+        192,
+        615,
+        250
+      ],
+      "anchor": [
+        610,
+        220
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "inputs": 2,
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "pin_out_001",
+      "kind": "OUTPUT_PIN",
+      "bodyBox": [
+        716,
+        206,
+        764,
+        234
+      ],
+      "anchor": [
+        720,
+        220
+      ],
+      "facing": "EAST",
+      "attributes": {
+        "label": "Y",
+        "bitWidth": 1
+      },
+      "ports": [],
+      "confidence": 1.0
+    }
+  ],
+  "nets": [
+    {
+      "id": "net_001",
+      "endpoints": [
+        {
+          "componentId": "pin_in_002",
+          "portId": "out"
+        },
+        {
+          "componentId": "gate_001",
+          "portId": "in0"
+        }
+      ],
+      "segments": [
+        [
+          100,
+          270,
+          150,
+          270
+        ],
+        [
+          150,
+          270,
+          150,
+          340
+        ],
+        [
+          150,
+          340,
+          180,
+          340
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "net_002",
+      "endpoints": [
+        {
+          "componentId": "pin_in_003",
+          "portId": "out"
+        },
+        {
+          "componentId": "gate_001",
+          "portId": "in1"
+        }
+      ],
+      "segments": [
+        [
+          100,
+          460,
+          160,
+          460
+        ],
+        [
+          160,
+          460,
+          160,
+          380
+        ],
+        [
+          160,
+          380,
+          180,
+          380
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "net_003",
+      "endpoints": [
+        {
+          "componentId": "gate_001",
+          "portId": "out"
+        },
+        {
+          "componentId": "gate_002",
+          "portId": "in0"
+        }
+      ],
+      "segments": [
+        [
+          230,
+          360,
+          330,
+          360
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "net_004",
+      "endpoints": [
+        {
+          "componentId": "gate_002",
+          "portId": "out"
+        },
+        {
+          "componentId": "gate_003",
+          "portId": "in0"
+        }
+      ],
+      "segments": [
+        [
+          360,
+          360,
+          450,
+          360
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "net_005",
+      "endpoints": [
+        {
+          "componentId": "pin_in_001",
+          "portId": "out"
+        },
+        {
+          "componentId": "gate_004",
+          "portId": "in0"
+        }
+      ],
+      "segments": [
+        [
+          100,
+          80,
+          530,
+          80
+        ],
+        [
+          530,
+          80,
+          530,
+          200
+        ],
+        [
+          530,
+          200,
+          560,
+          200
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "net_006",
+      "endpoints": [
+        {
+          "componentId": "gate_003",
+          "portId": "out"
+        },
+        {
+          "componentId": "gate_004",
+          "portId": "in1"
+        }
+      ],
+      "segments": [
+        [
+          480,
+          360,
+          540,
+          360
+        ],
+        [
+          540,
+          360,
+          540,
+          240
+        ],
+        [
+          540,
+          240,
+          560,
+          240
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    },
+    {
+      "id": "net_007",
+      "endpoints": [
+        {
+          "componentId": "gate_004",
+          "portId": "out"
+        },
+        {
+          "componentId": "pin_out_001",
+          "portId": "in"
+        }
+      ],
+      "segments": [
+        [
+          610,
+          220,
+          720,
+          220
+        ]
+      ],
+      "junctions": [],
+      "confidence": 1.0
+    }
+  ],
+  "unresolved": [],
+  "semanticHash": "2c127b1044c1703b47c990be696e02a46bdcd33939d338942c26904203019380"
+}

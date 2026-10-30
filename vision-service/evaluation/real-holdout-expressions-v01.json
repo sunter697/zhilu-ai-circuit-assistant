@@ -1,0 +1,201 @@
+{
+  "planVersion": "real-holdout-expressions/0.1",
+  "output": "Y",
+  "buildOptions": {
+    "twoInputGatesOnly": true,
+    "nandGatesOnly": false,
+    "gateShape": "ansi",
+    "theme": "light",
+    "zoomPercent": 100
+  },
+  "benchmarkV01": {
+    "requiredCaseRange": "R001-R022",
+    "optionalStressCaseRange": "R023-R026",
+    "exclusionRecordedBeforeEvaluation": true,
+    "reason": "The analyzer UI disables expression/minimized tabs above six inputs; all 26 cases remain parser-and-builder regression cases."
+  },
+  "cases": [
+    {
+      "id": "R001",
+      "inputs": ["A", "B"],
+      "expression": "A AND B",
+      "focus": "AND 基线",
+      "expectedGateCounts": {"AND": 1}
+    },
+    {
+      "id": "R002",
+      "inputs": ["A", "B"],
+      "expression": "A OR B",
+      "focus": "OR 基线",
+      "expectedGateCounts": {"OR": 1}
+    },
+    {
+      "id": "R003",
+      "inputs": ["A"],
+      "expression": "NOT A",
+      "focus": "NOT 小目标",
+      "expectedGateCounts": {"NOT": 1}
+    },
+    {
+      "id": "R004",
+      "inputs": ["A", "B"],
+      "expression": "NOT (A AND B)",
+      "focus": "真正的 NAND",
+      "expectedGateCounts": {"NAND": 1}
+    },
+    {
+      "id": "R005",
+      "inputs": ["A", "B"],
+      "expression": "NOT (A OR B)",
+      "focus": "真正的 NOR",
+      "expectedGateCounts": {"NOR": 1}
+    },
+    {
+      "id": "R006",
+      "inputs": ["A", "B"],
+      "expression": "A XOR B",
+      "focus": "XOR 基线",
+      "expectedGateCounts": {"XOR": 1}
+    },
+    {
+      "id": "R007",
+      "inputs": ["A", "B"],
+      "expression": "A EQUALS B",
+      "focus": "XNOR 基线",
+      "expectedGateCounts": {"XNOR": 1}
+    },
+    {
+      "id": "R008",
+      "inputs": ["A", "B", "C"],
+      "expression": "(A AND B) OR (A AND C)",
+      "focus": "输入 A 扇出",
+      "expectedGateCounts": {"AND": 2, "OR": 1}
+    },
+    {
+      "id": "R009",
+      "inputs": ["A", "B", "C"],
+      "expression": "(A OR B) AND (A OR C)",
+      "focus": "输入 A 扇出与双 OR",
+      "expectedGateCounts": {"AND": 1, "OR": 2}
+    },
+    {
+      "id": "R010",
+      "inputs": ["A", "B", "C"],
+      "expression": "(NOT (A AND B)) OR C",
+      "focus": "NAND 后接 OR",
+      "expectedGateCounts": {"NAND": 1, "OR": 1}
+    },
+    {
+      "id": "R011",
+      "inputs": ["A", "B", "C"],
+      "expression": "(NOT (A OR B)) AND C",
+      "focus": "NOR 后接 AND",
+      "expectedGateCounts": {"AND": 1, "NOR": 1}
+    },
+    {
+      "id": "R012",
+      "inputs": ["A", "B", "C"],
+      "expression": "(A XOR B) AND (A XOR C)",
+      "focus": "XOR 与输入扇出",
+      "expectedGateCounts": {"AND": 1, "XOR": 2}
+    },
+    {
+      "id": "R013",
+      "inputs": ["A", "B", "C", "D"],
+      "expression": "(A EQUALS B) OR (C EQUALS D)",
+      "focus": "双 XNOR",
+      "expectedGateCounts": {"OR": 1, "XNOR": 2}
+    },
+    {
+      "id": "R014",
+      "inputs": ["A", "B", "C", "D"],
+      "expression": "(A AND B) XOR (C OR D)",
+      "focus": "AND/OR/XOR 混合",
+      "expectedGateCounts": {"AND": 1, "OR": 1, "XOR": 1}
+    },
+    {
+      "id": "R015",
+      "inputs": ["A", "B", "C", "D"],
+      "expression": "NOT ((A XOR B) OR (C AND D))",
+      "focus": "XOR/AND 汇入 NOR",
+      "expectedGateCounts": {"AND": 1, "NOR": 1, "XOR": 1}
+    },
+    {
+      "id": "R016",
+      "inputs": ["A", "B", "C", "D"],
+      "expression": "NOT ((A EQUALS B) AND (C OR D))",
+      "focus": "XNOR/OR 汇入 NAND",
+      "expectedGateCounts": {"OR": 1, "NAND": 1, "XNOR": 1}
+    },
+    {
+      "id": "R017",
+      "inputs": ["A", "B", "C", "D", "E", "F"],
+      "expression": "((A AND B) OR (C AND D)) XOR (E OR F)",
+      "focus": "三层六输入",
+      "expectedGateCounts": {"AND": 2, "OR": 2, "XOR": 1}
+    },
+    {
+      "id": "R018",
+      "inputs": ["A", "B", "C", "D", "E"],
+      "expression": "((A XOR B) AND (C EQUALS D)) OR (NOT E)",
+      "focus": "含独立 NOT 的五门混合",
+      "expectedGateCounts": {"AND": 1, "OR": 1, "NOT": 1, "XOR": 1, "XNOR": 1}
+    },
+    {
+      "id": "R019",
+      "inputs": ["A", "B", "C", "D"],
+      "expression": "(NOT (A AND B)) XOR (NOT (C OR D))",
+      "focus": "NAND/NOR 易混淆组合",
+      "expectedGateCounts": {"NAND": 1, "NOR": 1, "XOR": 1}
+    },
+    {
+      "id": "R020",
+      "inputs": ["A", "B", "C", "D", "E", "F"],
+      "expression": "((A AND B) OR (A AND C)) AND ((D XOR E) OR (D EQUALS F))",
+      "focus": "双扇出与七门拓扑",
+      "expectedGateCounts": {"AND": 3, "OR": 2, "XOR": 1, "XNOR": 1}
+    },
+    {
+      "id": "R021",
+      "inputs": ["A", "B", "C", "D", "E"],
+      "expression": "((A XOR B) OR (A EQUALS C)) AND ((NOT D) OR (D AND E))",
+      "focus": "A/D 双扇出与独立 NOT",
+      "expectedGateCounts": {"AND": 2, "OR": 2, "NOT": 1, "XOR": 1, "XNOR": 1}
+    },
+    {
+      "id": "R022",
+      "inputs": ["A", "B", "C", "D", "E", "F"],
+      "expression": "((NOT (A AND B)) OR (A XOR C)) EQUALS ((D OR E) AND (D OR F))",
+      "focus": "NAND/XOR/XNOR 与双扇出",
+      "expectedGateCounts": {"AND": 1, "OR": 3, "NAND": 1, "XOR": 1, "XNOR": 1}
+    },
+    {
+      "id": "R023",
+      "inputs": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "expression": "(((A AND B) OR (C XOR D)) AND ((E EQUALS F) OR (NOT (G AND H)))) XOR (I OR J)",
+      "focus": "20 元件大型图",
+      "expectedGateCounts": {"AND": 2, "OR": 3, "NAND": 1, "XOR": 2, "XNOR": 1}
+    },
+    {
+      "id": "R024",
+      "inputs": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J"],
+      "expression": "(((A OR B) AND (C EQUALS D)) OR ((NOT (E OR F)) AND (G XOR H))) EQUALS (I AND J)",
+      "focus": "20 元件 XNOR 根节点",
+      "expectedGateCounts": {"AND": 3, "OR": 2, "NOR": 1, "XOR": 1, "XNOR": 2}
+    },
+    {
+      "id": "R025",
+      "inputs": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
+      "expression": "(((A AND B) XOR (C OR D)) AND ((E EQUALS F) OR (NOT (G AND H)))) OR ((I XOR J) AND (NOT (K OR L)))",
+      "focus": "24 元件全类别压力图",
+      "expectedGateCounts": {"AND": 3, "OR": 3, "NAND": 1, "NOR": 1, "XOR": 2, "XNOR": 1}
+    },
+    {
+      "id": "R026",
+      "inputs": ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L"],
+      "expression": "(((NOT A) OR (B AND C)) XOR ((D EQUALS E) AND (F OR G))) AND (((H XOR I) OR (NOT (J AND K))) EQUALS L)",
+      "focus": "25 元件上限压力图",
+      "expectedGateCounts": {"AND": 3, "OR": 3, "NOT": 1, "NAND": 1, "XOR": 2, "XNOR": 2}
+    }
+  ]
+}

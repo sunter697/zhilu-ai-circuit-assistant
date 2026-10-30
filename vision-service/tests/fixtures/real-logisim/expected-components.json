@@ -1,0 +1,22 @@
+{
+  "T01_AND2.png": {"INPUT_PIN": 2, "OUTPUT_PIN": 1, "AND": 1},
+  "T02_OR2.png": {"INPUT_PIN": 2, "OUTPUT_PIN": 1, "OR": 1},
+  "T03_NOT.png": {"INPUT_PIN": 2, "OUTPUT_PIN": 1, "NOT": 1},
+  "T04_NAND2.png": {"INPUT_PIN": 2, "OUTPUT_PIN": 1, "NAND": 1},
+  "T05_NOR2.png": {"INPUT_PIN": 2, "OUTPUT_PIN": 1, "NOR": 1},
+  "T06_AND_OR.png": {"INPUT_PIN": 3, "OUTPUT_PIN": 1, "AND": 1, "OR": 1},
+  "T07_OR_AND.png": {"INPUT_PIN": 3, "OUTPUT_PIN": 1, "AND": 1, "OR": 1},
+  "T08_NOT_AND_OR.png": {"INPUT_PIN": 3, "OUTPUT_PIN": 1, "AND": 1, "OR": 1, "NOT": 1},
+  "T09_NAND_OR.png": {"INPUT_PIN": 3, "OUTPUT_PIN": 1, "OR": 1, "NAND": 1},
+  "T10_NOR_AND.png": {"INPUT_PIN": 3, "OUTPUT_PIN": 1, "AND": 1, "NOR": 1},
+  "T11_MIXED_A.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "AND": 1, "NAND": 1, "NOR": 1},
+  "T12_AND_NOR.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "AND": 1, "NOR": 1},
+  "T13_OR_NAND.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "OR": 1, "NAND": 1},
+  "T14_NAND3.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "NAND": 1},
+  "T15_NOR3.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "NOR": 1},
+  "T16_TWO_AND.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "AND": 2, "OR": 1},
+  "T17_TWO_NAND.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "OR": 1, "NAND": 2},
+  "T18_TWO_OR_NAND.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "OR": 2, "NAND": 1},
+  "T19_TWO_NOT.png": {"INPUT_PIN": 4, "OUTPUT_PIN": 1, "AND": 2, "OR": 1, "NOT": 2},
+  "T20_ALL_TYPES.png": {"INPUT_PIN": 6, "OUTPUT_PIN": 1, "AND": 2, "OR": 1, "NOT": 1, "NAND": 1, "NOR": 1}
+}

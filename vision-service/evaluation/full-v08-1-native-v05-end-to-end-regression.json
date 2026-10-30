@@ -1,0 +1,32 @@
+{
+  "evaluationVersion": "native-topology-eval/0.1",
+  "mode": "onnx-end-to-end",
+  "runtime": {
+    "status": "ok",
+    "protocolVersion": "vision-ir/0.1",
+    "serviceVersion": "full-v08/0.1",
+    "modelVersion": "best.onnx:1fce32b1b4f5+legacy-week1.onnx:8678fa69e648",
+    "modelSha256": "1fce32b1b4f5a7f52754264be401d6d6a766eadd75c30305852d5761fa92318b",
+    "detectorMode": "onnx-9-class-with-profile-routed-legacy-compensation"
+  },
+  "dataset": {
+    "path": "vision-service/build/native-eval-v05-300",
+    "manifestSha256": "c934966287b52d985b2a047730ff4c52632fb4629d1ec01f3ea6f607a1944dd0",
+    "split": "test",
+    "samples": 300,
+    "uniqueSemanticHashes": 100
+  },
+  "overall": {
+    "unresolvedFreeImages": 300,
+    "unresolvedFreeRate": 1.0,
+    "exactGraphImages": 300,
+    "exactGraphRate": 1.0,
+    "elapsedSeconds": 167.3660666000069,
+    "millisecondsPerImage": 557.8868886666896
+  },
+  "failures": [],
+  "limitations": [
+    "This is an end-to-end evaluation on native generated images.",
+    "It does not replace an independently collected real screenshot benchmark."
+  ]
+}

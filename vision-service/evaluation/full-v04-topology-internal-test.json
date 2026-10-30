@@ -1,0 +1,44 @@
+{
+  "evaluationVersion": "native-topology-eval/0.1",
+  "releaseCandidate": "full-v04/0.1",
+  "mode": "ground-truth-component-boxes",
+  "dataset": {
+    "name": "native-dataset-v04-5000",
+    "manifestSha256": "28230c17c230b00a1c624278a2b20b514b591a75f5d49a4bbb89c7525bcec0d9",
+    "split": "test",
+    "samples": 700,
+    "uniqueSemanticHashes": 350
+  },
+  "overall": {
+    "unresolvedFreeImages": 700,
+    "unresolvedFreeRate": 1.0,
+    "exactGraphImages": 700,
+    "exactGraphRate": 1.0,
+    "cpuMillisecondsPerImage": 483.820717571403
+  },
+  "coveredProfiles": [
+    "native-grid",
+    "light-grid",
+    "gridless",
+    "crisp-grid",
+    "soft-resample",
+    "off-white-grid"
+  ],
+  "coveredFamilies": [
+    "tree",
+    "diamond-fanout",
+    "layered-dag"
+  ],
+  "endToEndRegression": {
+    "onnxImages": 4,
+    "exactGraphImages": 4,
+    "includesGridless": true,
+    "includesFanout": true,
+    "includesLayeredDag": true
+  },
+  "limitations": [
+    "The 700-image topology evaluation uses ground-truth component boxes to isolate wire, port and graph recovery.",
+    "The four-image ONNX regression verifies integration but is not a statistically independent external benchmark.",
+    "A new frozen end-to-end set and an independently collected real Logisim screenshot set are still required."
+  ]
+}

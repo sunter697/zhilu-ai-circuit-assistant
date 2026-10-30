@@ -1,0 +1,265 @@
+{
+  "suiteVersion": "week1-day6/0.1",
+  "datasetSeed": 20261021,
+  "valid": [
+    {
+      "id": "S01_AND",
+      "category": "simple",
+      "sourceStem": "sample_000004_936659e317",
+      "image": "valid/simple/S01_AND.png",
+      "expectedIr": "valid/simple/S01_AND.json",
+      "imageSha256": "d3b92bad4c684e5395ff952bdabfe90214ae4e17991eebe0fe73530f2e52b12f",
+      "componentCount": 4,
+      "netCount": 3,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "S02_OR",
+      "category": "simple",
+      "sourceStem": "sample_000009_4dab46c824",
+      "image": "valid/simple/S02_OR.png",
+      "expectedIr": "valid/simple/S02_OR.json",
+      "imageSha256": "6e7d5457a176055d781cfdb2175f52479add9aa7377995297b6bcb32eb5c3042",
+      "componentCount": 4,
+      "netCount": 3,
+      "componentKinds": {
+        "INPUT_PIN": 2,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "S03_NOR",
+      "category": "simple",
+      "sourceStem": "sample_000007_fec2561071",
+      "image": "valid/simple/S03_NOR.png",
+      "expectedIr": "valid/simple/S03_NOR.json",
+      "imageSha256": "07b908803b49d350a5f9809907f086ff2e1f14fe65c925553c167ad68f0c82af",
+      "componentCount": 4,
+      "netCount": 3,
+      "componentKinds": {
+        "INPUT_PIN": 2,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "S04_NAND",
+      "category": "simple",
+      "sourceStem": "sample_000008_2bab333323",
+      "image": "valid/simple/S04_NAND.png",
+      "expectedIr": "valid/simple/S04_NAND.json",
+      "imageSha256": "ac2469d892b143df0c18e7d48fd712353124b41b200044f983611a07a4f092d7",
+      "componentCount": 4,
+      "netCount": 3,
+      "componentKinds": {
+        "INPUT_PIN": 2,
+        "NAND": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "S05_DOUBLE_NOT",
+      "category": "simple",
+      "sourceStem": "sample_000015_b574afba09",
+      "image": "valid/simple/S05_DOUBLE_NOT.png",
+      "expectedIr": "valid/simple/S05_DOUBLE_NOT.json",
+      "imageSha256": "fe75fe550f27affb37adfa8e1915d3c53192db92118b540aaf703337d87c5766",
+      "componentCount": 4,
+      "netCount": 3,
+      "componentKinds": {
+        "INPUT_PIN": 1,
+        "NOT": 2,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "M01_OR_NOT_NOT_AND",
+      "category": "multilevel",
+      "sourceStem": "sample_000003_2c127b1044",
+      "image": "valid/multilevel/M01_OR_NOT_NOT_AND.png",
+      "expectedIr": "valid/multilevel/M01_OR_NOT_NOT_AND.json",
+      "imageSha256": "f9cdd03a06d7c57627ea3aba427472c68b382b3cedc7c79804487679faa98162",
+      "componentCount": 8,
+      "netCount": 7,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOT": 2,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "M02_AND_NOT_OR",
+      "category": "multilevel",
+      "sourceStem": "sample_000005_4fac08777e",
+      "image": "valid/multilevel/M02_AND_NOT_OR.png",
+      "expectedIr": "valid/multilevel/M02_AND_NOT_OR.json",
+      "imageSha256": "65897c583836640004988dd994fad8f18059291838d63551d7f1878b8d85d3c9",
+      "componentCount": 7,
+      "netCount": 6,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOT": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "M03_TWO_AND",
+      "category": "multilevel",
+      "sourceStem": "sample_000018_d84ddd3715",
+      "image": "valid/multilevel/M03_TWO_AND.png",
+      "expectedIr": "valid/multilevel/M03_TWO_AND.json",
+      "imageSha256": "2ae68b5473517c7212b9e67faa4e4d9f8c12ea548e595c123d4c4d0d41396b54",
+      "componentCount": 6,
+      "netCount": 5,
+      "componentKinds": {
+        "AND": 2,
+        "INPUT_PIN": 3,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "M04_AND_NOT_AND",
+      "category": "multilevel",
+      "sourceStem": "sample_000020_70eea2b21d",
+      "image": "valid/multilevel/M04_AND_NOT_AND.png",
+      "expectedIr": "valid/multilevel/M04_AND_NOT_AND.json",
+      "imageSha256": "9a4f50ca130fc13b16f79a7f52c223a8f3c97b214eb98e9b62c27bb83ce56fa1",
+      "componentCount": 7,
+      "netCount": 6,
+      "componentKinds": {
+        "AND": 2,
+        "INPUT_PIN": 3,
+        "NOT": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "M05_OR_AND_NOT",
+      "category": "multilevel",
+      "sourceStem": "sample_000029_d8bbf06c05",
+      "image": "valid/multilevel/M05_OR_AND_NOT.png",
+      "expectedIr": "valid/multilevel/M05_OR_AND_NOT.json",
+      "imageSha256": "5de33d236445b026a3ed882e3522e191f13170cd1a22aa00ba18250cd9a4af7b",
+      "componentCount": 7,
+      "netCount": 6,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOT": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "N01_NOR_AND",
+      "category": "nand-nor",
+      "sourceStem": "sample_000002_736c45f88e",
+      "image": "valid/nand-nor/N01_NOR_AND.png",
+      "expectedIr": "valid/nand-nor/N01_NOR_AND.json",
+      "imageSha256": "820c5085267b14ff4fdd3d02ac29a736d6742affec243c6a1c83a1925f26dabb",
+      "componentCount": 6,
+      "netCount": 5,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "N02_NAND_AND",
+      "category": "nand-nor",
+      "sourceStem": "sample_000006_a84b848004",
+      "image": "valid/nand-nor/N02_NAND_AND.png",
+      "expectedIr": "valid/nand-nor/N02_NAND_AND.json",
+      "imageSha256": "1cdf5a78fbd11c663d4ee9838fefa963d8f30f65091c7c6a8f8240fd204a34a8",
+      "componentCount": 6,
+      "netCount": 5,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NAND": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "N03_NOT_AND_NOR",
+      "category": "nand-nor",
+      "sourceStem": "sample_000010_5f2c02a175",
+      "image": "valid/nand-nor/N03_NOT_AND_NOR.png",
+      "expectedIr": "valid/nand-nor/N03_NOT_AND_NOR.json",
+      "imageSha256": "24f3bef16a9897287e5fcaa49decc1a0a56a7f864a73106d93218d81d1f35ae1",
+      "componentCount": 7,
+      "netCount": 6,
+      "componentKinds": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOR": 1,
+        "NOT": 1,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "N04_THREE_NAND",
+      "category": "nand-nor",
+      "sourceStem": "sample_000014_0504c49535",
+      "image": "valid/nand-nor/N04_THREE_NAND.png",
+      "expectedIr": "valid/nand-nor/N04_THREE_NAND.json",
+      "imageSha256": "7c64ff68e1b822d67089cee20810f8f28aae152ba93f9c3dbc04cb7f6cf838e5",
+      "componentCount": 8,
+      "netCount": 7,
+      "componentKinds": {
+        "INPUT_PIN": 4,
+        "NAND": 3,
+        "OUTPUT_PIN": 1
+      }
+    },
+    {
+      "id": "N05_NOR_NOR_NOT",
+      "category": "nand-nor",
+      "sourceStem": "sample_000017_edc5709e23",
+      "image": "valid/nand-nor/N05_NOR_NOR_NOT.png",
+      "expectedIr": "valid/nand-nor/N05_NOR_NOR_NOT.json",
+      "imageSha256": "6e9385707a4c62f9609a794f7ff920cc4a6145b2f526a96764f3fb998818aaf7",
+      "componentCount": 7,
+      "netCount": 6,
+      "componentKinds": {
+        "INPUT_PIN": 3,
+        "NOR": 2,
+        "NOT": 1,
+        "OUTPUT_PIN": 1
+      }
+    }
+  ],
+  "invalid": [
+    {
+      "id": "I01_BLANK_GRID",
+      "image": "invalid/I01_BLANK_GRID.png",
+      "expectedServiceCode": "EMPTY_CIRCUIT"
+    },
+    {
+      "id": "I02_NOT_AN_IMAGE",
+      "image": "invalid/I02_NOT_AN_IMAGE.txt",
+      "expectedServiceCode": "UNSUPPORTED_IMAGE"
+    },
+    {
+      "id": "I03_OVERSIZED",
+      "image": "invalid/I03_OVERSIZED.png",
+      "expectedServiceCode": "IMAGE_TOO_LARGE"
+    },
+    {
+      "id": "I05_UNCONNECTED_WIRE",
+      "image": "../real-logisim/T03_NOT.png",
+      "expectedIssueCode": "UNCONNECTED_WIRE"
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  java:
+    name: Java build and tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up JDK 23
+        uses: actions/setup-java@v6
+        with:
+          distribution: temurin
+          java-version: '23'
+          cache: gradle
+
+      - name: Make Gradle wrapper executable
+        run: chmod +x gradlew
+
+      - name: Install upstream test tools
+        run: sudo apt-get update && sudo apt-get install -y xxd
+
+      - name: Test, style-check and package
+        run: ./gradlew test checkstyleMain checkstyleTest shadowJar --no-daemon --console=plain
+
+  vision-service:
+    name: Python vision tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v7
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: '3.12'
+          cache: pip
+          cache-dependency-path: |
+            vision-service/pyproject.toml
+            vision-service/requirements-runtime.txt
+
+      - name: Install frozen runtime and test dependencies
+        run: python -m pip install -r vision-service/requirements-runtime.txt -e './vision-service[test]'
+
+      - name: Verify release artifacts
+        run: python vision-service/verify_release.py
+
+      - name: Run Python tests
+        run: python -m pytest vision-service/tests -q

@@ -1,0 +1,407 @@
+{
+  "evaluationVersion": "real-holdout-eval/0.1",
+  "evaluationMode": "post-result-regression",
+  "benchmark": {
+    "path": "vision-service/build/real-holdout-v01",
+    "schemaVersion": "logisim-real-holdout/0.1",
+    "manifestSha256": "b5c7de2337fc89033ae1d77c1fef284f96d17faf9cd624f246baf9510c44080b",
+    "samples": 22,
+    "frozenAt": "2026-10-27T12:34:17Z",
+    "declarations": {
+      "modelAndThresholdsFrozenBeforeCollection": true,
+      "notUsedForTraining": true,
+      "notUsedForThresholdSelection": true,
+      "annotationCompletedBeforeEvaluation": true
+    },
+    "expectedRuntime": {
+      "serviceVersion": "full-v04/0.1",
+      "modelSha256": "926af0e63c910fedb823529860e9ac6d9a3979210720d6c5a33afb6d3552c9be",
+      "detectorModePrefix": "onnx-9-class"
+    }
+  },
+  "runtime": {
+    "status": "ok",
+    "protocolVersion": "vision-ir/0.1",
+    "serviceVersion": "full-v07/0.1",
+    "modelVersion": "best.onnx:926af0e63c91+legacy-week1.onnx:8678fa69e648",
+    "modelSha256": "926af0e63c910fedb823529860e9ac6d9a3979210720d6c5a33afb6d3552c9be",
+    "detectorMode": "onnx-9-class-with-profile-routed-legacy-compensation"
+  },
+  "settings": {
+    "minimumCases": 20,
+    "positionTolerancePixels": 8.0,
+    "official": false
+  },
+  "overall": {
+    "componentTp": 130,
+    "componentFp": 34,
+    "componentFn": 34,
+    "netTp": 104,
+    "netFp": 38,
+    "netFn": 38,
+    "junctionTp": 4,
+    "junctionFp": 5,
+    "junctionFn": 5,
+    "componentPrecision": 0.7926829268292683,
+    "componentRecall": 0.7926829268292683,
+    "componentF1": 0.7926829268292683,
+    "componentCountExactImages": 22,
+    "componentCountExactRate": 1.0,
+    "componentLocalizationExactImages": 14,
+    "componentLocalizationExactRate": 0.6363636363636364,
+    "netPrecision": 0.7323943661971831,
+    "netRecall": 0.7323943661971831,
+    "netF1": 0.7323943661971831,
+    "junctionF1": 0.4444444444444444,
+    "unresolvedFreeImages": 22,
+    "unresolvedFreeRate": 1.0,
+    "exactGraphImages": 14,
+    "exactGraphRate": 0.6363636363636364,
+    "elapsedSeconds": 16.73922130000028,
+    "millisecondsPerImage": 760.8736954545583
+  },
+  "classes": {
+    "INPUT_PIN": {
+      "tp": 62,
+      "fp": 14,
+      "fn": 14,
+      "precision": 0.8157894736842105,
+      "recall": 0.8157894736842105,
+      "f1": 0.8157894736842105
+    },
+    "OUTPUT_PIN": {
+      "tp": 14,
+      "fp": 8,
+      "fn": 8,
+      "precision": 0.6363636363636364,
+      "recall": 0.6363636363636364,
+      "f1": 0.6363636363636364
+    },
+    "AND": {
+      "tp": 14,
+      "fp": 3,
+      "fn": 3,
+      "precision": 0.8235294117647058,
+      "recall": 0.8235294117647058,
+      "f1": 0.8235294117647058
+    },
+    "OR": {
+      "tp": 14,
+      "fp": 4,
+      "fn": 4,
+      "precision": 0.7777777777777778,
+      "recall": 0.7777777777777778,
+      "f1": 0.7777777777777778
+    },
+    "NOT": {
+      "tp": 3,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "NAND": {
+      "tp": 4,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.8,
+      "recall": 0.8,
+      "f1": 0.8
+    },
+    "NOR": {
+      "tp": 4,
+      "fp": 0,
+      "fn": 0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0
+    },
+    "XOR": {
+      "tp": 8,
+      "fp": 3,
+      "fn": 3,
+      "precision": 0.7272727272727273,
+      "recall": 0.7272727272727273,
+      "f1": 0.7272727272727273
+    },
+    "XNOR": {
+      "tp": 7,
+      "fp": 1,
+      "fn": 1,
+      "precision": 0.875,
+      "recall": 0.875,
+      "f1": 0.875
+    }
+  },
+  "acceptance": {
+    "eligible": false,
+    "passed": null,
+    "coverageEligible": true,
+    "representedClasses": [
+      "INPUT_PIN",
+      "OUTPUT_PIN",
+      "AND",
+      "OR",
+      "NOT",
+      "NAND",
+      "NOR",
+      "XOR",
+      "XNOR"
+    ],
+    "minimumRepresentedClassRecall": 0.6363636363636364,
+    "targets": {
+      "minimumClassRecall": 0.98,
+      "netF1": 0.98,
+      "junctionF1": 0.95,
+      "exactGraphRate": 0.9,
+      "millisecondsPerImage": 5000.0
+    }
+  },
+  "failures": [
+    {
+      "id": "R010",
+      "image": "images/R010.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 3,
+        "NAND": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 3,
+        "NAND": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 3,
+      "componentFp": 3,
+      "componentFn": 3,
+      "netTp": 2,
+      "netFp": 3,
+      "netFn": 3,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [],
+      "elapsedMilliseconds": 647.8568000002269
+    },
+    {
+      "id": "R011",
+      "image": "images/R011.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 3,
+      "componentFp": 3,
+      "componentFn": 3,
+      "netTp": 2,
+      "netFp": 3,
+      "netFn": 3,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [],
+      "elapsedMilliseconds": 667.2720999995363
+    },
+    {
+      "id": "R012",
+      "image": "images/R012.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "OUTPUT_PIN": 1,
+        "XOR": 2
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "OUTPUT_PIN": 1,
+        "XOR": 2
+      },
+      "componentTp": 3,
+      "componentFp": 4,
+      "componentFn": 4,
+      "netTp": 0,
+      "netFp": 6,
+      "netFn": 6,
+      "junctionTp": 0,
+      "junctionFp": 1,
+      "junctionFn": 1,
+      "unresolved": [],
+      "elapsedMilliseconds": 653.8947999997617
+    },
+    {
+      "id": "R013",
+      "image": "images/R013.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 4,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 2
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 4,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 2
+      },
+      "componentTp": 7,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 6,
+      "netFp": 1,
+      "netFn": 1,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [],
+      "elapsedMilliseconds": 797.5145000000339
+    },
+    {
+      "id": "R015",
+      "image": "images/R015.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 4,
+        "NOR": 1,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 4,
+        "NOR": 1,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "componentTp": 7,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 6,
+      "netFp": 1,
+      "netFn": 1,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [],
+      "elapsedMilliseconds": 781.88069999851
+    },
+    {
+      "id": "R017",
+      "image": "images/R017.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "componentTp": 11,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 10,
+      "netFp": 1,
+      "netFn": 1,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [],
+      "elapsedMilliseconds": 937.7198000001954
+    },
+    {
+      "id": "R020",
+      "image": "images/R020.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 3,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 3,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "componentTp": 6,
+      "componentFp": 8,
+      "componentFn": 8,
+      "netTp": 3,
+      "netFp": 10,
+      "netFn": 10,
+      "junctionTp": 0,
+      "junctionFp": 2,
+      "junctionFn": 2,
+      "unresolved": [],
+      "elapsedMilliseconds": 955.9019000007538
+    },
+    {
+      "id": "R022",
+      "image": "images/R022.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 6,
+        "NAND": 1,
+        "OR": 3,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 6,
+        "NAND": 1,
+        "OR": 3,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "componentTp": 1,
+      "componentFp": 13,
+      "componentFn": 13,
+      "netTp": 0,
+      "netFp": 13,
+      "netFn": 13,
+      "junctionTp": 0,
+      "junctionFp": 2,
+      "junctionFn": 2,
+      "unresolved": [],
+      "elapsedMilliseconds": 1221.009299999423
+    }
+  ],
+  "limitations": [
+    "The benchmark only covers the capture profiles declared in its manifest.",
+    "A model or threshold change invalidates this benchmark for unbiased final evaluation.",
+    "Segment geometry is diagnostic; exact graph matching uses localized components, port endpoints, nets and junctions.",
+    "Regression mode was used after the official result was observed; this result cannot support an independent acceptance claim."
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://logisim-evolution.example/schemas/real-holdout-0.1.json",
+  "title": "Logisim Circuit Vision independent real screenshot benchmark",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "datasetRole",
+    "frozen",
+    "frozenAt",
+    "declarations",
+    "expectedRuntime",
+    "cases"
+  ],
+  "properties": {
+    "schemaVersion": {"const": "logisim-real-holdout/0.1"},
+    "datasetRole": {"const": "independent-holdout"},
+    "frozen": {"const": true},
+    "frozenAt": {"type": "string", "minLength": 1},
+    "declarations": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "modelAndThresholdsFrozenBeforeCollection",
+        "notUsedForTraining",
+        "notUsedForThresholdSelection",
+        "annotationCompletedBeforeEvaluation"
+      ],
+      "properties": {
+        "modelAndThresholdsFrozenBeforeCollection": {"const": true},
+        "notUsedForTraining": {"const": true},
+        "notUsedForThresholdSelection": {"const": true},
+        "annotationCompletedBeforeEvaluation": {"const": true}
+      }
+    },
+    "expectedRuntime": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["serviceVersion", "modelSha256", "detectorModePrefix"],
+      "properties": {
+        "serviceVersion": {"type": "string", "minLength": 1},
+        "modelSha256": {
+          "type": "string",
+          "pattern": "^[0-9a-f]{64}$"
+        },
+        "detectorModePrefix": {"type": "string", "minLength": 1}
+      }
+    },
+    "cases": {
+      "type": "array",
+      "minItems": 20,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "image",
+          "imageSha256",
+          "expectedIr",
+          "expectedIrSha256",
+          "capture"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[A-Za-z0-9][A-Za-z0-9_-]{0,63}$"
+          },
+          "image": {"type": "string", "minLength": 1},
+          "imageSha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "expectedIr": {"type": "string", "minLength": 1},
+          "expectedIrSha256": {
+            "type": "string",
+            "pattern": "^[0-9a-f]{64}$"
+          },
+          "capture": {
+            "type": "object",
+            "minProperties": 1
+          }
+        }
+      }
+    }
+  }
+}

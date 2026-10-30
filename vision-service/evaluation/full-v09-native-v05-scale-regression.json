@@ -1,0 +1,66 @@
+{
+  "evaluationVersion": "native-scale-regression/0.1",
+  "evaluationMode": "post-fix-regression",
+  "acceptanceEligible": false,
+  "runtime": {
+    "status": "ok",
+    "protocolVersion": "vision-ir/0.1",
+    "serviceVersion": "full-v09/0.1",
+    "modelVersion": "best.onnx:1fce32b1b4f5+legacy-week1.onnx:8678fa69e648",
+    "modelSha256": "1fce32b1b4f5a7f52754264be401d6d6a766eadd75c30305852d5761fa92318b",
+    "detectorMode": "onnx-9-class-with-profile-routed-legacy-compensation"
+  },
+  "dataset": "vision-service/build/native-multisize-smoke-v05",
+  "records": 36,
+  "factors": {
+    "0.5": {
+      "samples": 36,
+      "unresolvedFree": 36,
+      "exactTopology": 36,
+      "exactTopologyRate": 1.0
+    },
+    "0.6": {
+      "samples": 36,
+      "unresolvedFree": 36,
+      "exactTopology": 36,
+      "exactTopologyRate": 1.0
+    },
+    "0.8": {
+      "samples": 36,
+      "unresolvedFree": 36,
+      "exactTopology": 36,
+      "exactTopologyRate": 1.0
+    },
+    "1.2": {
+      "samples": 36,
+      "unresolvedFree": 36,
+      "exactTopology": 36,
+      "exactTopologyRate": 1.0
+    },
+    "1.6": {
+      "samples": 36,
+      "unresolvedFree": 36,
+      "exactTopology": 36,
+      "exactTopologyRate": 1.0
+    },
+    "2.0": {
+      "samples": 36,
+      "unresolvedFree": 36,
+      "exactTopology": 36,
+      "exactTopologyRate": 1.0
+    }
+  },
+  "overall": {
+    "samples": 216,
+    "exactTopology": 216,
+    "exactTopologyRate": 1.0,
+    "maximumAnchorErrorPixels": 0.33093806066989667,
+    "elapsedSeconds": 244.1074268999946,
+    "millisecondsPerImage": 1130.126976388864
+  },
+  "failures": [],
+  "limitations": [
+    "Images are uniformly resized with nearest-neighbor sampling.",
+    "This is a regression test, not an independently collected screenshot benchmark."
+  ]
+}

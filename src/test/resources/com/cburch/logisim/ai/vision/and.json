@@ -1,0 +1,88 @@
+{
+  "schemaVersion": "vision-ir/0.1",
+  "source": {"sha256": "fixture-and", "width": 400, "height": 220},
+  "profile": {
+    "theme": "light",
+    "gateShape": "ansi",
+    "gridPixels": 10,
+    "scale": 1,
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "components": [
+    {
+      "id": "pin_a",
+      "kind": "INPUT_PIN",
+      "bodyBox": [70, 70, 100, 90],
+      "anchor": [100, 80],
+      "facing": "EAST",
+      "attributes": {"label": "A", "bitWidth": 1},
+      "ports": [],
+      "confidence": 1
+    },
+    {
+      "id": "pin_b",
+      "kind": "INPUT_PIN",
+      "bodyBox": [70, 110, 100, 130],
+      "anchor": [100, 120],
+      "facing": "EAST",
+      "attributes": {"label": "B", "bitWidth": 1},
+      "ports": [],
+      "confidence": 1
+    },
+    {
+      "id": "gate_and",
+      "kind": "AND",
+      "bodyBox": [150, 70, 200, 130],
+      "anchor": [200, 100],
+      "facing": "EAST",
+      "attributes": {"inputs": 2, "bitWidth": 1},
+      "ports": [],
+      "confidence": 1
+    },
+    {
+      "id": "pin_y",
+      "kind": "OUTPUT_PIN",
+      "bodyBox": [300, 90, 330, 110],
+      "anchor": [300, 100],
+      "facing": "EAST",
+      "attributes": {"label": "Y", "bitWidth": 1},
+      "ports": [],
+      "confidence": 1
+    }
+  ],
+  "nets": [
+    {
+      "id": "net_a",
+      "endpoints": [
+        {"componentId": "pin_a", "portId": "out"},
+        {"componentId": "gate_and", "portId": "in0"}
+      ],
+      "segments": [[100, 80, 150, 80]],
+      "junctions": [],
+      "confidence": 1
+    },
+    {
+      "id": "net_b",
+      "endpoints": [
+        {"componentId": "pin_b", "portId": "out"},
+        {"componentId": "gate_and", "portId": "in1"}
+      ],
+      "segments": [[100, 120, 150, 120]],
+      "junctions": [],
+      "confidence": 1
+    },
+    {
+      "id": "net_y",
+      "endpoints": [
+        {"componentId": "gate_and", "portId": "out"},
+        {"componentId": "pin_y", "portId": "in"}
+      ],
+      "segments": [[200, 100, 300, 100]],
+      "junctions": [],
+      "confidence": 1
+    }
+  ],
+  "unresolved": [],
+  "semanticHash": "fixture-and-topology"
+}

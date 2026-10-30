@@ -1,0 +1,9 @@
+# Frozen CPU runtime used for the one-week submission rehearsal.
+# Includes direct and transitive packages from the verified clean environment.
+# Use Python 3.12 and install with: python -m pip install -r requirements-runtime.txt
+flatbuffers==25.12.19
+numpy==2.5.4
+onnxruntime==1.31.0
+packaging==26.3
+Pillow==12.2.0
+protobuf==7.36.2

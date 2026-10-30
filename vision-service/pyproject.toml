@@ -1,0 +1,24 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "logisim-circuit-vision"
+version = "0.1.0"
+description = "Dataset and inference tools for Logisim circuit image recognition"
+requires-python = ">=3.10"
+dependencies = ["numpy>=1.26,<3", "Pillow==12.2.0"]
+
+[project.scripts]
+logisim-vision-generate = "logisim_vision.dataset:main"
+logisim-vision-serve = "logisim_vision.app:main"
+
+[project.optional-dependencies]
+model = ["onnxruntime>=1.19,<2"]
+test = ["pytest>=8,<10"]
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

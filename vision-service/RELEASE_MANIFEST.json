@@ -1,0 +1,240 @@
+{
+  "releaseVersion": "full-v09/0.1",
+  "releaseDate": "2026-10-28",
+  "protocolVersion": "vision-ir/0.1",
+  "datasetSeed": 20261027,
+  "runtime": {
+    "pythonTested": {
+      "version": "3.12.4",
+      "majorMinor": [
+        3,
+        12
+      ]
+    },
+    "dependencies": {
+      "flatbuffers": "25.12.19",
+      "numpy": "2.5.4",
+      "onnxruntime": "1.31.0",
+      "packaging": "26.3",
+      "Pillow": "12.2.0",
+      "protobuf": "7.36.2"
+    },
+    "device": "CPU"
+  },
+  "model": {
+    "family": "YOLO11n",
+    "inputShape": [
+      1,
+      3,
+      800,
+      800
+    ],
+    "trainingRun": "full-v05-1",
+    "trainingSeed": 20261028,
+    "earlyStoppedEpoch": 32,
+    "bestEpoch": 7,
+    "classes": [
+      "INPUT_PIN",
+      "OUTPUT_PIN",
+      "AND",
+      "OR",
+      "NOT",
+      "NAND",
+      "NOR",
+      "XOR",
+      "XNOR"
+    ],
+    "sourceCheckpointSha256": "0171cee1c4894fe2b5e466ca1c90f0688b0ab5909b50a3281a975d32a1939f74",
+    "legacyCompatibilityModel": {
+      "path": "models/legacy-week1.onnx",
+      "classes": 7,
+      "sha256": "8678fa69e64865655c57d8bc93c9376cbbbe70b34b540ce9719d27071d7e9c26",
+      "routing": "legacy dark-green-wire screenshot palette only"
+    },
+    "frozenComponentEvaluation": {
+      "dataset": "native-eval-v05-300",
+      "manifestSha256": "c934966287b52d985b2a047730ff4c52632fb4629d1ec01f3ea6f607a1944dd0",
+      "samples": 300,
+      "tp": 2769,
+      "fp": 0,
+      "fn": 0,
+      "exactImages": 300,
+      "meanMatchedIou": 0.9998535275668681
+    }
+  },
+  "topology": {
+    "internalTestDataset": "native-eval-v05-300/test",
+    "manifestSha256": "c934966287b52d985b2a047730ff4c52632fb4629d1ec01f3ea6f607a1944dd0",
+    "samples": 300,
+    "uniqueSemanticHashes": 100,
+    "exactGraphImages": 300,
+    "groundTruthComponentBoxes": false,
+    "onnxEndToEndRegressionImages": 300,
+    "frozenEndToEndEvaluation": {
+      "dataset": "native-eval-v05-300",
+      "seed": 20261028,
+      "manifestSha256": "c934966287b52d985b2a047730ff4c52632fb4629d1ec01f3ea6f607a1944dd0",
+      "excludedTrainingSemanticHashes": 2500,
+      "samples": 300,
+      "uniqueSemanticHashes": 100,
+      "exactGraphImages": 300,
+      "evaluationMode": "post-fix-regression",
+      "acceptanceEligible": false
+    },
+    "scaleRegression": {
+      "dataset": "native-multisize-smoke-v05",
+      "records": 36,
+      "factors": [
+        0.5,
+        0.6,
+        0.8,
+        1.2,
+        1.6,
+        2.0
+      ],
+      "recognitionRuns": 216,
+      "unresolvedFreeRuns": 216,
+      "exactGraphRuns": 216,
+      "maximumAnchorErrorPixels": 0.33093806066989667,
+      "evaluationMode": "post-fix-regression",
+      "acceptanceEligible": false
+    }
+  },
+  "artifacts": [
+    {
+      "role": "runtime-model",
+      "path": "models/best.onnx",
+      "bytes": 10705478,
+      "sha256": "1fce32b1b4f5a7f52754264be401d6d6a766eadd75c30305852d5761fa92318b"
+    },
+    {
+      "role": "legacy-compatibility-model",
+      "path": "models/legacy-week1.onnx",
+      "bytes": 10703885,
+      "sha256": "8678fa69e64865655c57d8bc93c9376cbbbe70b34b540ce9719d27071d7e9c26"
+    },
+    {
+      "role": "component-evaluation",
+      "path": "evaluation/full-v05-1-component-evaluation.json",
+      "hashMode": "normalized-lf",
+      "bytes": 2710,
+      "sha256": "d888babf45cd9001a4ef57da6c492a7c8ff2a8536ca6fdf30a21a966b97754de"
+    },
+    {
+      "role": "topology-internal-evaluation",
+      "path": "evaluation/full-v04-topology-internal-test.json",
+      "hashMode": "normalized-lf",
+      "bytes": 1305,
+      "sha256": "da56f5aef61c714b833b3559bb6ee32498d6505eb270dfff61309f8d0c2a242b"
+    },
+    {
+      "role": "frozen-end-to-end-evaluation",
+      "path": "evaluation/full-v08-1-native-v05-end-to-end-regression.json",
+      "hashMode": "normalized-lf",
+      "bytes": 1096,
+      "sha256": "bdce75f090c3bbd68e1c0756ac1834d5065587d28a2ac795facf849817bf045b"
+    },
+    {
+      "role": "scale-regression",
+      "path": "evaluation/full-v09-native-v05-scale-regression.json",
+      "hashMode": "normalized-lf",
+      "bytes": 1782,
+      "sha256": "9d94784fb04b58e58b3c3d89c48f151448aa1dca98975f5327f93ca0492e67e5"
+    },
+    {
+      "role": "frozen-end-to-end-exclusion",
+      "path": "evaluation/native-e2e-v04-eval-200-exclusion.jsonl",
+      "hashMode": "normalized-lf",
+      "bytes": 8400,
+      "sha256": "9abb5029c57940b1f58f57d745668ca9271015090dd5cb259e001d7b793343d0"
+    },
+    {
+      "role": "regression-manifest",
+      "path": "tests/fixtures/day6/manifest.json",
+      "hashMode": "normalized-lf",
+      "bytes": 7798,
+      "sha256": "d074f6f4c2143f8b2c6b47714831bd95af242c091e1b70a97bc460aa774898d2"
+    },
+    {
+      "role": "official-real-holdout-evaluation",
+      "path": "evaluation/real-holdout-v01-result.json",
+      "hashMode": "normalized-lf",
+      "bytes": 44248,
+      "sha256": "80571868a1bb55411a7a3e4de4fa777b64e27c2ee1e6df347856c4eaa3d8a996"
+    },
+    {
+      "role": "v07-real-holdout-regression",
+      "path": "evaluation/real-holdout-v01-regression-v07-profile-topology.json",
+      "hashMode": "normalized-lf",
+      "bytes": 9639,
+      "sha256": "3430cfbeefd1cb60c617fb631ec14e779e1ec8fac2f387960a43f9a332e75153"
+    },
+    {
+      "role": "service-launcher",
+      "path": "start_service.cmd",
+      "hashMode": "normalized-lf",
+      "bytes": 719,
+      "sha256": "c4d46f8fa62262458286ee1d7191f27da445dda1c0106c715aa7f717e93d5922"
+    },
+    {
+      "role": "runtime-lock",
+      "path": "requirements-runtime.txt",
+      "hashMode": "normalized-lf",
+      "bytes": 333,
+      "sha256": "ad7cd61c69f9fa3d7b062ab6975b5dd490fad189e5e4d7240afb18cb7e6b4bf8"
+    },
+    {
+      "role": "demo-simple",
+      "path": "tests/fixtures/day6/valid/simple/S01_AND.png",
+      "bytes": 11023,
+      "sha256": "d3b92bad4c684e5395ff952bdabfe90214ae4e17991eebe0fe73530f2e52b12f"
+    },
+    {
+      "role": "demo-multilevel",
+      "path": "tests/fixtures/day6/valid/multilevel/M02_AND_NOT_OR.png",
+      "bytes": 17614,
+      "sha256": "65897c583836640004988dd994fad8f18059291838d63551d7f1878b8d85d3c9"
+    },
+    {
+      "role": "demo-nand-nor",
+      "path": "tests/fixtures/day6/valid/nand-nor/N04_THREE_NAND.png",
+      "bytes": 19294,
+      "sha256": "7c64ff68e1b822d67089cee20810f8f28aae152ba93f9c3dbc04cb7f6cf838e5"
+    },
+    {
+      "role": "demo-failure",
+      "path": "tests/fixtures/real-logisim/T03_NOT.png",
+      "bytes": 6528,
+      "sha256": "5ded0f5c26a7076b8cfec7cfef9ff4fa8d736c945efe9908cb51154db636c2f6"
+    }
+  ],
+  "demos": [
+    {
+      "id": "S01_AND",
+      "path": "tests/fixtures/day6/valid/simple/S01_AND.png",
+      "expectedComponents": 4,
+      "expectedNets": 3,
+      "expectedUnresolved": 0
+    },
+    {
+      "id": "M02_AND_NOT_OR",
+      "path": "tests/fixtures/day6/valid/multilevel/M02_AND_NOT_OR.png",
+      "expectedComponents": 7,
+      "expectedNets": 6,
+      "expectedUnresolved": 0
+    },
+    {
+      "id": "N04_THREE_NAND",
+      "path": "tests/fixtures/day6/valid/nand-nor/N04_THREE_NAND.png",
+      "expectedComponents": 8,
+      "expectedNets": 7,
+      "expectedUnresolved": 0
+    },
+    {
+      "id": "T03_UNCONNECTED_WIRE",
+      "path": "tests/fixtures/real-logisim/T03_NOT.png",
+      "expectedIssue": "UNCONNECTED_WIRE",
+      "expectedMutation": false
+    }
+  ]
+}

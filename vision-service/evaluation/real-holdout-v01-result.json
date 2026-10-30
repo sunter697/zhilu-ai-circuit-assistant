@@ -1,0 +1,1654 @@
+{
+  "evaluationVersion": "real-holdout-eval/0.1",
+  "benchmark": {
+    "path": "vision-service/build/real-holdout-v01",
+    "schemaVersion": "logisim-real-holdout/0.1",
+    "manifestSha256": "b5c7de2337fc89033ae1d77c1fef284f96d17faf9cd624f246baf9510c44080b",
+    "samples": 22,
+    "frozenAt": "2026-10-27T12:34:17Z",
+    "declarations": {
+      "modelAndThresholdsFrozenBeforeCollection": true,
+      "notUsedForTraining": true,
+      "notUsedForThresholdSelection": true,
+      "annotationCompletedBeforeEvaluation": true
+    },
+    "expectedRuntime": {
+      "serviceVersion": "full-v04/0.1",
+      "modelSha256": "926af0e63c910fedb823529860e9ac6d9a3979210720d6c5a33afb6d3552c9be",
+      "detectorModePrefix": "onnx-9-class"
+    }
+  },
+  "runtime": {
+    "status": "ok",
+    "protocolVersion": "vision-ir/0.1",
+    "serviceVersion": "full-v04/0.1",
+    "modelVersion": "best.onnx:926af0e63c91+legacy-week1.onnx:8678fa69e648",
+    "modelSha256": "926af0e63c910fedb823529860e9ac6d9a3979210720d6c5a33afb6d3552c9be",
+    "detectorMode": "onnx-9-class-with-profile-routed-legacy-compensation"
+  },
+  "settings": {
+    "minimumCases": 20,
+    "positionTolerancePixels": 8.0
+  },
+  "overall": {
+    "componentTp": 103,
+    "componentFp": 57,
+    "componentFn": 61,
+    "netTp": 30,
+    "netFp": 13,
+    "netFn": 112,
+    "junctionTp": 0,
+    "junctionFp": 0,
+    "junctionFn": 9,
+    "componentPrecision": 0.64375,
+    "componentRecall": 0.6280487804878049,
+    "componentF1": 0.6358024691358025,
+    "componentCountExactImages": 15,
+    "componentCountExactRate": 0.6818181818181818,
+    "componentLocalizationExactImages": 9,
+    "componentLocalizationExactRate": 0.4090909090909091,
+    "netPrecision": 0.6976744186046512,
+    "netRecall": 0.2112676056338028,
+    "netF1": 0.32432432432432434,
+    "junctionF1": 0.0,
+    "unresolvedFreeImages": 1,
+    "unresolvedFreeRate": 0.045454545454545456,
+    "exactGraphImages": 1,
+    "exactGraphRate": 0.045454545454545456,
+    "elapsedSeconds": 12.304093699999612,
+    "millisecondsPerImage": 559.2769863636187
+  },
+  "classes": {
+    "INPUT_PIN": {
+      "tp": 46,
+      "fp": 27,
+      "fn": 30,
+      "precision": 0.6301369863013698,
+      "recall": 0.6052631578947368,
+      "f1": 0.6174496644295302
+    },
+    "OUTPUT_PIN": {
+      "tp": 12,
+      "fp": 4,
+      "fn": 10,
+      "precision": 0.75,
+      "recall": 0.5454545454545454,
+      "f1": 0.631578947368421
+    },
+    "AND": {
+      "tp": 10,
+      "fp": 5,
+      "fn": 7,
+      "precision": 0.6666666666666666,
+      "recall": 0.5882352941176471,
+      "f1": 0.625
+    },
+    "OR": {
+      "tp": 14,
+      "fp": 6,
+      "fn": 4,
+      "precision": 0.7,
+      "recall": 0.7777777777777778,
+      "f1": 0.7368421052631579
+    },
+    "NOT": {
+      "tp": 2,
+      "fp": 6,
+      "fn": 1,
+      "precision": 0.25,
+      "recall": 0.6666666666666666,
+      "f1": 0.36363636363636365
+    },
+    "NAND": {
+      "tp": 2,
+      "fp": 1,
+      "fn": 3,
+      "precision": 0.6666666666666666,
+      "recall": 0.4,
+      "f1": 0.5
+    },
+    "NOR": {
+      "tp": 4,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.6666666666666666,
+      "recall": 1.0,
+      "f1": 0.8
+    },
+    "XOR": {
+      "tp": 7,
+      "fp": 4,
+      "fn": 4,
+      "precision": 0.6363636363636364,
+      "recall": 0.6363636363636364,
+      "f1": 0.6363636363636364
+    },
+    "XNOR": {
+      "tp": 6,
+      "fp": 2,
+      "fn": 2,
+      "precision": 0.75,
+      "recall": 0.75,
+      "f1": 0.75
+    }
+  },
+  "acceptance": {
+    "eligible": true,
+    "passed": false,
+    "representedClasses": [
+      "INPUT_PIN",
+      "OUTPUT_PIN",
+      "AND",
+      "OR",
+      "NOT",
+      "NAND",
+      "NOR",
+      "XOR",
+      "XNOR"
+    ],
+    "minimumRepresentedClassRecall": 0.4,
+    "targets": {
+      "minimumClassRecall": 0.98,
+      "netF1": 0.98,
+      "junctionF1": 0.95,
+      "exactGraphRate": 0.9,
+      "millisecondsPerImage": 5000.0
+    }
+  },
+  "failures": [
+    {
+      "id": "R001",
+      "image": "images/R001.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 4,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 2,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 2 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 451.14120000016555
+    },
+    {
+      "id": "R002",
+      "image": "images/R002.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 2,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 2,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 4,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 2,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 2 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 415.5061999999816
+    },
+    {
+      "id": "R004",
+      "image": "images/R004.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 2,
+        "NAND": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 2,
+        "NAND": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 4,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 2,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 2 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 401.77140000014333
+    },
+    {
+      "id": "R005",
+      "image": "images/R005.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 2,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 2,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 4,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 2,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 2 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 440.7781999998406
+    },
+    {
+      "id": "R006",
+      "image": "images/R006.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "componentTp": 4,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 2,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 2 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 443.4015000006184
+    },
+    {
+      "id": "R007",
+      "image": "images/R007.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1
+      },
+      "componentTp": 4,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 2,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 2 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 423.67909999939
+    },
+    {
+      "id": "R008",
+      "image": "images/R008.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 3,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 3,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 7,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 3,
+      "netFp": 0,
+      "netFn": 3,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 1,
+      "unresolved": [
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 3 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 525.5085999997391
+    },
+    {
+      "id": "R009",
+      "image": "images/R009.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "OR": 2,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "OR": 2,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 7,
+      "componentFp": 0,
+      "componentFn": 0,
+      "netTp": 3,
+      "netFp": 0,
+      "netFn": 3,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 1,
+      "unresolved": [
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 3 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 522.990899999968
+    },
+    {
+      "id": "R010",
+      "image": "images/R010.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 3,
+        "NAND": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 3,
+        "NAND": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 5,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 4,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches output_pin_001:in",
+          "severity": "ERROR",
+          "subjectId": "output_pin_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_001 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_002 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_003 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_004 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_005 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_006 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_008 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_008"
+        }
+      ],
+      "elapsedMilliseconds": 501.2364999993224
+    },
+    {
+      "id": "R011",
+      "image": "images/R011.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "NOR": 1,
+        "OUTPUT_PIN": 1
+      },
+      "componentTp": 5,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 1,
+      "netFp": 0,
+      "netFn": 4,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches output_pin_001:in",
+          "severity": "ERROR",
+          "subjectId": "output_pin_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_001 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_002 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_003 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_004 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_005 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_006 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_008 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_008"
+        }
+      ],
+      "elapsedMilliseconds": 478.8027000004149
+    },
+    {
+      "id": "R012",
+      "image": "images/R012.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "OUTPUT_PIN": 1,
+        "XOR": 2
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 3,
+        "OUTPUT_PIN": 1,
+        "XOR": 2
+      },
+      "componentTp": 3,
+      "componentFp": 4,
+      "componentFn": 4,
+      "netTp": 0,
+      "netFp": 2,
+      "netFn": 6,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 1,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_002:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_002:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches output_pin_001:in",
+          "severity": "ERROR",
+          "subjectId": "output_pin_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 3 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        }
+      ],
+      "elapsedMilliseconds": 506.6761999996743
+    },
+    {
+      "id": "R013",
+      "image": "images/R013.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 4,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 2
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 4,
+        "NOT": 1,
+        "OR": 1,
+        "XNOR": 2
+      },
+      "componentTp": 7,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 2,
+      "netFp": 0,
+      "netFn": 5,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_002:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_002:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_001:out",
+          "severity": "ERROR",
+          "subjectId": "not_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_001:in0",
+          "severity": "ERROR",
+          "subjectId": "not_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 4 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        }
+      ],
+      "elapsedMilliseconds": 570.676000000276
+    },
+    {
+      "id": "R014",
+      "image": "images/R014.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 4,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 4,
+        "NOT": 1,
+        "OR": 2,
+        "XOR": 1
+      },
+      "componentTp": 6,
+      "componentFp": 2,
+      "componentFn": 2,
+      "netTp": 0,
+      "netFp": 0,
+      "netFn": 7,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_001:out",
+          "severity": "ERROR",
+          "subjectId": "not_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_001:in0",
+          "severity": "ERROR",
+          "subjectId": "not_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 4 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_002 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_003 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        }
+      ],
+      "elapsedMilliseconds": 612.0599000005313
+    },
+    {
+      "id": "R015",
+      "image": "images/R015.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 4,
+        "NOR": 1,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 4,
+        "NOR": 1,
+        "NOT": 1,
+        "OR": 1,
+        "XOR": 1
+      },
+      "componentTp": 2,
+      "componentFp": 6,
+      "componentFn": 6,
+      "netTp": 1,
+      "netFp": 2,
+      "netFn": 6,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_001:out",
+          "severity": "ERROR",
+          "subjectId": "not_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 4 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 715.1841999993849
+    },
+    {
+      "id": "R016",
+      "image": "images/R016.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 4,
+        "NAND": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 4,
+        "NOR": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1
+      },
+      "componentTp": 7,
+      "componentFp": 1,
+      "componentFn": 1,
+      "netTp": 0,
+      "netFp": 3,
+      "netFn": 7,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 4 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        }
+      ],
+      "elapsedMilliseconds": 570.0753000000987
+    },
+    {
+      "id": "R017",
+      "image": "images/R017.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "XOR": 1
+      },
+      "componentTp": 10,
+      "componentFp": 1,
+      "componentFn": 2,
+      "netTp": 1,
+      "netFp": 1,
+      "netFn": 10,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_001:in0",
+          "severity": "ERROR",
+          "subjectId": "and_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_001:in1",
+          "severity": "ERROR",
+          "subjectId": "and_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 6 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_005 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_006 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        }
+      ],
+      "elapsedMilliseconds": 722.4711999997453
+    },
+    {
+      "id": "R018",
+      "image": "images/R018.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 5,
+        "NOT": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 5,
+        "NOT": 1,
+        "OR": 1,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "componentTp": 6,
+      "componentFp": 5,
+      "componentFn": 5,
+      "netTp": 4,
+      "netFp": 0,
+      "netFn": 6,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_001 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_002 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_003 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_005 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_010 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_010"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_011 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_011"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_012 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_012"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_006 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_007 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_007"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_008 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_008"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_009 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_009"
+        }
+      ],
+      "elapsedMilliseconds": 667.1747999998843
+    },
+    {
+      "id": "R019",
+      "image": "images/R019.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "INPUT_PIN": 4,
+        "NAND": 1,
+        "NOR": 1,
+        "OUTPUT_PIN": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "INPUT_PIN": 3,
+        "NOR": 2,
+        "NOT": 2,
+        "XOR": 1
+      },
+      "componentTp": 2,
+      "componentFp": 6,
+      "componentFn": 6,
+      "netTp": 0,
+      "netFp": 1,
+      "netFn": 7,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 0,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_001:in0",
+          "severity": "ERROR",
+          "subjectId": "not_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches not_002:out",
+          "severity": "ERROR",
+          "subjectId": "not_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_001 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_002 has 3 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_003 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        }
+      ],
+      "elapsedMilliseconds": 576.6620000003968
+    },
+    {
+      "id": "R020",
+      "image": "images/R020.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 3,
+        "INPUT_PIN": 6,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 3,
+        "INPUT_PIN": 4,
+        "OR": 2,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "componentTp": 2,
+      "componentFp": 9,
+      "componentFn": 12,
+      "netTp": 0,
+      "netFp": 0,
+      "netFn": 13,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 2,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_001:out",
+          "severity": "ERROR",
+          "subjectId": "and_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_001:in0",
+          "severity": "ERROR",
+          "subjectId": "and_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_001:in1",
+          "severity": "ERROR",
+          "subjectId": "and_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_002:out",
+          "severity": "ERROR",
+          "subjectId": "and_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_002:in0",
+          "severity": "ERROR",
+          "subjectId": "and_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches or_002:out",
+          "severity": "ERROR",
+          "subjectId": "or_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches or_002:in0",
+          "severity": "ERROR",
+          "subjectId": "or_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches or_002:in1",
+          "severity": "ERROR",
+          "subjectId": "or_002"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_003:in0",
+          "severity": "ERROR",
+          "subjectId": "and_003"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches and_003:in1",
+          "severity": "ERROR",
+          "subjectId": "and_003"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_003 has 4 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_005 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_006 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_007 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_007"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_008 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_008"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_010 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_010"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_001 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_002 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_009 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_009"
+        }
+      ],
+      "elapsedMilliseconds": 762.8924000000552
+    },
+    {
+      "id": "R021",
+      "image": "images/R021.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 5,
+        "NOT": 1,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 2,
+        "INPUT_PIN": 5,
+        "NOT": 1,
+        "OR": 2,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "componentTp": 7,
+      "componentFp": 6,
+      "componentFn": 6,
+      "netTp": 6,
+      "netFp": 0,
+      "netFn": 6,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 2,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_001 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_002 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_002"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_003 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_003"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_004 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_004"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_005 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_010 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_010"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_011 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_011"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_012 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_012"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_013 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_013"
+        },
+        {
+          "code": "MISSING_DRIVER",
+          "message": "Wire region wire_014 has 0 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_014"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_006 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_007 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_007"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_008 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_008"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_009 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_009"
+        }
+      ],
+      "elapsedMilliseconds": 769.4509999992079
+    },
+    {
+      "id": "R022",
+      "image": "images/R022.png",
+      "exception": null,
+      "expectedComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 6,
+        "NAND": 1,
+        "OR": 3,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "actualComponentCounts": {
+        "AND": 1,
+        "INPUT_PIN": 6,
+        "NAND": 1,
+        "OR": 3,
+        "OUTPUT_PIN": 1,
+        "XNOR": 1,
+        "XOR": 1
+      },
+      "componentTp": 0,
+      "componentFp": 14,
+      "componentFn": 14,
+      "netTp": 0,
+      "netFp": 4,
+      "netFn": 13,
+      "junctionTp": 0,
+      "junctionFp": 0,
+      "junctionFn": 2,
+      "unresolved": [
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches nand_001:out",
+          "severity": "ERROR",
+          "subjectId": "nand_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches nand_001:in0",
+          "severity": "ERROR",
+          "subjectId": "nand_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches nand_001:in1",
+          "severity": "ERROR",
+          "subjectId": "nand_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches or_003:out",
+          "severity": "ERROR",
+          "subjectId": "or_003"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches or_003:in0",
+          "severity": "ERROR",
+          "subjectId": "or_003"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in0",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "UNCONNECTED_PORT",
+          "message": "No wire reaches xnor_001:in1",
+          "severity": "ERROR",
+          "subjectId": "xnor_001"
+        },
+        {
+          "code": "MULTIPLE_DRIVERS",
+          "message": "Wire region wire_001 has 6 drivers",
+          "severity": "ERROR",
+          "subjectId": "wire_001"
+        },
+        {
+          "code": "UNCONNECTED_WIRE",
+          "message": "Wire region wire_006 reaches only one component port",
+          "severity": "ERROR",
+          "subjectId": "wire_006"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_005 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_005"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_007 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_007"
+        },
+        {
+          "code": "UNMATCHED_WIRE",
+          "message": "Wire region wire_008 does not reach a component port",
+          "severity": "ERROR",
+          "subjectId": "wire_008"
+        }
+      ],
+      "elapsedMilliseconds": 841.4141000002928
+    }
+  ],
+  "limitations": [
+    "The benchmark only covers the capture profiles declared in its manifest.",
+    "A model or threshold change invalidates this benchmark for unbiased final evaluation.",
+    "Segment geometry is diagnostic; exact graph matching uses localized components, port endpoints, nets and junctions."
+  ]
+}

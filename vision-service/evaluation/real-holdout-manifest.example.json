@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "logisim-real-holdout/0.1",
+  "datasetRole": "independent-holdout",
+  "frozen": true,
+  "frozenAt": "2026-10-26T12:00:00Z",
+  "declarations": {
+    "modelAndThresholdsFrozenBeforeCollection": true,
+    "notUsedForTraining": true,
+    "notUsedForThresholdSelection": true,
+    "annotationCompletedBeforeEvaluation": true
+  },
+  "expectedRuntime": {
+    "serviceVersion": "full-v04/0.1",
+    "modelSha256": "926af0e63c910fedb823529860e9ac6d9a3979210720d6c5a33afb6d3552c9be",
+    "detectorModePrefix": "onnx-9-class"
+  },
+  "cases": [
+    {
+      "id": "R001",
+      "image": "images/R001.png",
+      "imageSha256": "replace-with-64-lowercase-hex-characters",
+      "expectedIr": "annotations/R001.json",
+      "expectedIrSha256": "replace-with-64-lowercase-hex-characters",
+      "capture": {
+        "applicationVersion": "record-the-exact-Logisim-version",
+        "method": "export-png",
+        "theme": "light",
+        "scalePercent": 100,
+        "collector": "record-who-collected-it",
+        "notes": "Do not put tuning decisions in this field."
+      }
+    }
+  ]
+}

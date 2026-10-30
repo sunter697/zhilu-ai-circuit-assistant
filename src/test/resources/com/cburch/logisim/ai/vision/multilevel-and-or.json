@@ -1,0 +1,33 @@
+{
+  "schemaVersion": "vision-ir/0.1",
+  "source": {"sha256": "fixture-multilevel", "width": 560, "height": 300},
+  "profile": {
+    "theme": "light",
+    "gateShape": "ansi",
+    "gridPixels": 10,
+    "scale": 1,
+    "offsetX": 0,
+    "offsetY": 0
+  },
+  "components": [
+    {"id": "pin_a", "kind": "INPUT_PIN", "bodyBox": [70, 70, 100, 90], "anchor": [100, 80], "facing": "EAST", "attributes": {"label": "A", "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "pin_b", "kind": "INPUT_PIN", "bodyBox": [70, 110, 100, 130], "anchor": [100, 120], "facing": "EAST", "attributes": {"label": "B", "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "pin_c", "kind": "INPUT_PIN", "bodyBox": [70, 170, 100, 190], "anchor": [100, 180], "facing": "EAST", "attributes": {"label": "C", "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "pin_d", "kind": "INPUT_PIN", "bodyBox": [70, 210, 100, 230], "anchor": [100, 220], "facing": "EAST", "attributes": {"label": "D", "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "and_1", "kind": "AND", "bodyBox": [150, 70, 200, 130], "anchor": [200, 100], "facing": "EAST", "attributes": {"inputs": 2, "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "and_2", "kind": "AND", "bodyBox": [150, 170, 200, 230], "anchor": [200, 200], "facing": "EAST", "attributes": {"inputs": 2, "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "or_1", "kind": "OR", "bodyBox": [300, 120, 350, 180], "anchor": [350, 150], "facing": "EAST", "attributes": {"inputs": 2, "bitWidth": 1}, "ports": [], "confidence": 1},
+    {"id": "pin_y", "kind": "OUTPUT_PIN", "bodyBox": [450, 140, 480, 160], "anchor": [450, 150], "facing": "EAST", "attributes": {"label": "Y", "bitWidth": 1}, "ports": [], "confidence": 1}
+  ],
+  "nets": [
+    {"id": "net_a", "endpoints": [{"componentId": "pin_a", "portId": "out"}, {"componentId": "and_1", "portId": "in0"}], "segments": [[100, 80, 150, 80]], "junctions": [], "confidence": 1},
+    {"id": "net_b", "endpoints": [{"componentId": "pin_b", "portId": "out"}, {"componentId": "and_1", "portId": "in1"}], "segments": [[100, 120, 150, 120]], "junctions": [], "confidence": 1},
+    {"id": "net_c", "endpoints": [{"componentId": "pin_c", "portId": "out"}, {"componentId": "and_2", "portId": "in0"}], "segments": [[100, 180, 150, 180]], "junctions": [], "confidence": 1},
+    {"id": "net_d", "endpoints": [{"componentId": "pin_d", "portId": "out"}, {"componentId": "and_2", "portId": "in1"}], "segments": [[100, 220, 150, 220]], "junctions": [], "confidence": 1},
+    {"id": "net_ab", "endpoints": [{"componentId": "and_1", "portId": "out"}, {"componentId": "or_1", "portId": "in0"}], "segments": [[200, 100, 250, 100], [250, 100, 250, 130], [250, 130, 300, 130]], "junctions": [], "confidence": 1},
+    {"id": "net_cd", "endpoints": [{"componentId": "and_2", "portId": "out"}, {"componentId": "or_1", "portId": "in1"}], "segments": [[200, 200, 250, 200], [250, 200, 250, 170], [250, 170, 300, 170]], "junctions": [], "confidence": 1},
+    {"id": "net_y", "endpoints": [{"componentId": "or_1", "portId": "out"}, {"componentId": "pin_y", "portId": "in"}], "segments": [[350, 150, 450, 150]], "junctions": [], "confidence": 1}
+  ],
+  "unresolved": [],
+  "semanticHash": "fixture-multilevel-topology"
+}
