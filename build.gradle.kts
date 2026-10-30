@@ -55,7 +55,7 @@ dependencies {
   implementation("commons-cli:commons-cli:1.11.0")
   implementation("com.vladsch.flexmark:flexmark-all:0.64.8")
   implementation("org.apache.commons:commons-text:1.15.0")
-  implementation("com.microsoft.onnxruntime:onnxruntime:1.31.0")
+  implementation("com.microsoft.onnxruntime:onnxruntime:1.31.1")
 
   // NOTE: Be aware of reported issues with Eclipse and Batik
   // See: https://github.com/logisim-evolution/logisim-evolution/issues/709
